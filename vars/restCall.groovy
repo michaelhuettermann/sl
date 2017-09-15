@@ -17,10 +17,9 @@ def call(body) {
 
 
         //def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
-//       def output = pr.execute()
-//        output.consumeProcessOutput(sout, serr)
-  //      output.waitForOrKill(1000)
-        def command = "git --version"
+
+
+        def command = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
         def proc = command.execute()
         proc.waitFor()
 
