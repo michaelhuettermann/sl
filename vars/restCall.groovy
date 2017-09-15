@@ -12,8 +12,14 @@ def call(body) {
 
         println ( config.url )
         println ( config.bearer )
+        def pr = null
 
+        println "curl -sk -X GET -H \"Authorization: Bearer config.bearer \"config.url\"".execute().text
+
+
+        /*
         def HttpURLConnection connection = config.url.toURL().openConnection()
+
         if(config.bearer.length() > 0)
         {
             def conn = config.url.openConnection()
@@ -29,6 +35,7 @@ def call(body) {
         } finally {
             connection.disconnect()
         }
-        return pr
+        */
+        return "hallo"
     }
 }
