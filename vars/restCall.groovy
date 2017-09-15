@@ -16,13 +16,11 @@ def call(body) {
         def sout = new StringBuffer(), serr = new StringBuffer()
 
 
-        def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
-
-        def output = pr.execute()
-
-        output.consumeProcessOutput(sout, serr)
-        output.waitForOrKill(1000)
-
+        //def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
+//       def output = pr.execute()
+//        output.consumeProcessOutput(sout, serr)
+  //      output.waitForOrKill(1000)
+        "ls -l".execute()
 
 
         /*
@@ -44,6 +42,6 @@ def call(body) {
             connection.disconnect()
         }
         */
-        return output
+        return null
     }
 }
