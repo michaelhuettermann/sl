@@ -19,7 +19,9 @@ def call(body) {
         //def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
 
 
-        def command = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
+        //def command = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
+        def command = "curl -sk -X GET http://www.google.de"
+
         def proc = command.execute()
         proc.waitFor()
 
