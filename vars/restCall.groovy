@@ -8,7 +8,12 @@ def call(body) {
     body.delegate = config
     body()
 
-    retry(3){
+    retry(2){
+
+
+        System.Err.Println ( config.url )
+        System.Err.Println ( config.bearer )
+
         def HttpURLConnection connection = config.url.openConnection()
         if(config.bearer.length() > 0)
         {
