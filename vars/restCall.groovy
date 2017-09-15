@@ -13,11 +13,15 @@ def call(body) {
         println ( config.url )
         println ( config.bearer )
 
+        def sout = new StringBuffer(), serr = new StringBuffer()
+
 
         def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
 
         def output = pr.execute()
 
+        output.consumeProcessOutput(sout, serr)
+        output.waitForOrKill(1000)
 
 
 
