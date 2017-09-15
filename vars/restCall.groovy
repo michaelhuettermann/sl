@@ -10,10 +10,10 @@ def call(body) {
 
     retry(3){
         def HttpURLConnection connection = config.url.openConnection()
-        if(config.BEARER.length() > 0)
+        if(config.bearer.length() > 0)
         {
             def conn = config.url.openConnection()
-            connection.setRequestProperty("Authorization", "Bearer ${config.BEARER}")
+            connection.setRequestProperty("Authorization", "Bearer ${config.bearer}")
         }
         connection.setRequestMethod("GET")
         connection.setDoInput(true)
