@@ -16,7 +16,9 @@ def call(body) {
 
         def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
 
-        println ( pr )
+        def output = pr.execute().text
+
+
 
 
         /*
@@ -38,6 +40,6 @@ def call(body) {
             connection.disconnect()
         }
         */
-        return "hallo"
+        return output
     }
 }
