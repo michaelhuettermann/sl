@@ -13,14 +13,17 @@ def call(body) {
         println ( config.url )
         println ( config.bearer )
 
-        def sout = new StringBuffer(), serr = new StringBuffer()
 
 
         //def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
 
 
-        //def command = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
-        def command = "curl -sk -X GET http://www.google.de"
+        def command = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
+
+
+        println ( command )
+
+        println  " ... "
 
         def proc = command.execute()
         proc.waitFor()
