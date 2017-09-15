@@ -10,11 +10,10 @@ def call(body) {
 
     retry(1){
 
-
         println ( config.url )
         println ( config.bearer )
 
-        def HttpURLConnection connection = config.url.openConnection()
+        def HttpURLConnection connection = config.url.toURL().openConnection()
         if(config.bearer.length() > 0)
         {
             def conn = config.url.openConnection()
