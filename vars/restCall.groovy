@@ -14,7 +14,7 @@ def call(body) {
         println ( config.bearer )
 
 
-        def pr = "curl -sk -X GET -H \"Authorization: Bearer config.bearer \"config.url\""
+        def pr = "curl -sk -X GET -H \"Authorization: Bearer ${config.bearer} \"${config.url}\""
 
         println ( pr )
 
